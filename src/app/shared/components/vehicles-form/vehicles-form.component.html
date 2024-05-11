@@ -1,0 +1,29 @@
+ 
+
+<div class="container">
+<form [formGroup]="formRegister" (ngSubmit)="insertVehicle()">
+    <div>
+        <label>Color:</label>
+        <input type="text" formControlName="color">
+      </div>
+      <div>
+        <label>Marca:</label>
+        <input type="text" formControlName="make">
+      </div>
+      <div>
+        <label>Modelo:</label>
+        <input type="text" formControlName="model">
+      </div>
+      <div>
+        <label>Placa:</label>
+        <input type="text" formControlName="plate">
+      </div>
+      <div>
+        <label>Año:</label>
+        <input type="number" formControlName="year">
+      </div>
+    <button type="submit"  >Guardar</button>
+
+</form>
+
+</div>

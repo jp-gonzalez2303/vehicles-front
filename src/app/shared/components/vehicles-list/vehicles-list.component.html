@@ -1,0 +1,40 @@
+<h2>Listado de Vehículos</h2>
+
+<div class="container">
+
+  <input #myInput type="text" class="custom-input" (input)="onKeyDown()" />
+
+  
+  <pagination-controls previousLabel="Prev" nextLabel="Next"
+    (pageChange)="handlePageChange($event)"></pagination-controls>
+  <table>
+
+    <tr>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Matrícula</th>
+      <th>Color</th>
+      <th>Año</th>
+      <th>Acciones</th>
+    </tr>
+    <tr
+      *ngFor="let vehicle of vehicles| paginate: { itemsPerPage: pageSize, currentPage: currentPage, totalItems: totalItems }">
+      <td>{{ vehicle.make }}</td>
+      <td>{{ vehicle.model }}</td>
+      <td>{{ vehicle.plate }}</td>
+      <td>{{ vehicle.color }}</td>
+      <td>{{ vehicle.year }}</td>
+      <td>
+        <button (click)="deleteVehicle(vehicle.id)" class="btn btn-danger">Eliminar</button>
+
+        <button (click)="updateVehicle(vehicle)" class="btn btn-danger">Actualizar</button>
+      </td>
+    </tr>
+  </table>
+  <div *ngIf="showUpdate">
+    <app-vehicles-form [data]="dataUpdate" (outputData)="consumeUpdateService($event)">
+
+    </app-vehicles-form>
+  </div>
+
+</div>

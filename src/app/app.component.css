@@ -1,0 +1,28 @@
+/* Estilos para los enlaces que parecen botones */
+.nav-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-right: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #007bff;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  text-decoration: none; /* Elimina subrayado de los enlaces */
+}
+
+.nav-link:hover {
+  background-color: #0056b3; /* Cambia el color de fondo al pasar el ratón */
+}
+
+/* Estilos adicionales para la barra de navegación */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.navbar-nav {
+  margin-left: auto; /* Alinea los elementos a la derecha */
+}
